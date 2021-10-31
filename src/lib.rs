@@ -24,13 +24,13 @@ extern crate rustc_target;
 extern crate rustc_trait_selection;
 extern crate rustc_typeck;
 
-mod fill_me_in;
+mod linear_lint;
 
 #[doc(hidden)]
 #[no_mangle]
 pub fn register_lints(_sess: &rustc_session::Session, lint_store: &mut rustc_lint::LintStore) {
-    lint_store.register_lints(&[fill_me_in::FILL_ME_IN]);
-    lint_store.register_late_pass(|| Box::new(fill_me_in::FillMeIn));
+    lint_store.register_lints(&[linear_lint::LINEAR_LINT]);
+    lint_store.register_late_pass(|| Box::new(linear_lint::FillMeIn));
 }
 
 #[test]

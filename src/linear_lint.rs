@@ -17,12 +17,12 @@ declare_lint! {
     /// ```rust
     /// // example code that does not raise a warning
     /// ```
-    pub FILL_ME_IN,
-    Warn,
+    pub LINEAR_LINT,
+    Forbid,
     "description goes here"
 }
 
-declare_lint_pass!(FillMeIn => [FILL_ME_IN]);
+declare_lint_pass!(FillMeIn => [LINEAR_LINT]);
 
 impl<'hir> LateLintPass<'hir> for FillMeIn {
     // A list of things you might check can be found here:
