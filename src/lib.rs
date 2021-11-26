@@ -5,6 +5,7 @@ dylint_linting::dylint_library!();
 
 extern crate rustc_hir;
 extern crate rustc_lint;
+extern crate rustc_middle;
 extern crate rustc_session;
 
 mod linear_lint;
@@ -16,9 +17,13 @@ pub fn register_lints(_sess: &rustc_session::Session, lint_store: &mut rustc_lin
     lint_store.register_late_pass(|| Box::new(linear_lint::FillMeIn));
 }
 
-pub trait Linear {
+pub trait Linear: Drop {
     const HINT: &'static str = "This type has been marked as undroppable. Consult the documentation for destruction instructions.";
 }
 
 struct Foo;
 impl Linear for Foo {}
+impl Drop for Foo {
+    fn drop(&mut self) {}
+}
+fn foo(f: Foo) {}
