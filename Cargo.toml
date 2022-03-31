@@ -2,20 +2,18 @@
 name = "linear"
 version = "0.1.0"
 authors = ["Aatif Syed"]
-description = "Lint for linear types in Rust"
-edition = "2018"
+description = "Linear types in Rust"
+edition = "2021"
 publish = true
 
-[lib]
-crate-type = ["cdylib"]
-
 [dependencies]
-clippy_utils = { git = "https://github.com/rust-lang/rust-clippy", tag = "rust-1.56.0" }
-dylint_linting = "1.0.7"
-if_chain = "1.0.2"
+anyhow = "1.0.49"
 
 [dev-dependencies]
-dylint_testing = "1.0.7"
+
+[build-dependencies]
+anyhow = "1.0.49"
+cargo-toolchain = "0.1.0"
 
 [package.metadata.rust-analyzer]
 rustc_private = true

@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.rustcSource": "discover",
+    "rust-analyzer.updates.channel": "nightly",
+    "rust-analyzer.updates.askBeforeDownload": false
+}
